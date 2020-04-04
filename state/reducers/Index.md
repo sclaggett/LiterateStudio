@@ -1,3 +1,9 @@
+# Index
+@title TEMP
+@s TEMP
+
+@file app/reducers/index.ts
+```js
 import { combineReducers } from 'redux';
 import { connectRouter } from 'connected-react-router';
 import { History } from 'history';
@@ -9,3 +15,4 @@ export default function createRootReducer(history: History) {
     counter
   });
 }
+```

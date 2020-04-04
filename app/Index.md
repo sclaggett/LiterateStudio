@@ -1,3 +1,9 @@
+# Index
+@title TEMP
+@s TEMP
+
+@file app/index.tsx
+```js
 import React, { Fragment } from 'react';
 import { render } from 'react-dom';
 import { AppContainer as ReactHotAppContainer } from 'react-hot-loader';
@@ -17,3 +23,4 @@ document.addEventListener('DOMContentLoaded', () =>
     document.getElementById('root')
   )
 );
+```

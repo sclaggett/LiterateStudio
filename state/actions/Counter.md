@@ -1,3 +1,9 @@
+# Counter
+@title TEMP
+@s TEMP
+
+@file app/actions/counter.ts
+```js
 import { GetState, Dispatch } from '../reducers/types';
 
 export const INCREMENT_COUNTER = 'INCREMENT_COUNTER';
@@ -34,3 +40,4 @@ export function incrementAsync(delay = 1000) {
     }, delay);
   };
 }
+```

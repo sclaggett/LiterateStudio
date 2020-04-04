@@ -1,3 +1,9 @@
+# Main
+@title TEMP
+@s TEMP
+
+@file app/main.dev.ts
+```js
 /* eslint global-require: off, no-console: off */
 
 /**
@@ -115,3 +121,4 @@ app.on('activate', () => {
   // dock icon is clicked and there are no other windows open.
   if (mainWindow === null) createWindow();
 });
+```

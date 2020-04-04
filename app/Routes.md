@@ -1,3 +1,9 @@
+# Routes
+@title TEMP
+@s TEMP
+
+@file app/Routes.tsx
+```js
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import routes from './constants/routes.json';
@@ -15,3 +21,4 @@ export default function Routes() {
     </App>
   );
 }
+```

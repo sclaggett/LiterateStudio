@@ -1,3 +1,24 @@
+# ConfigureStore
+@title TEMP
+@s TEMP
+
+@file app/store/configureStore.ts
+```js
+import configureStoreDev from './configureStore.dev';
+import configureStoreProd from './configureStore.prod';
+
+const selectedConfigureStore =
+  process.env.NODE_ENV === 'production'
+    ? configureStoreProd
+    : configureStoreDev;
+
+export const { configureStore } = selectedConfigureStore;
+
+export const { history } = selectedConfigureStore;
+```
+
+@file app/store/configureStore.dev.ts
+```js
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import { createHashHistory } from 'history';
@@ -82,3 +103,25 @@ const configureStore = (initialState?: counterStateType) => {
 };
 
 export default { configureStore, history };
+```
+
+@file app/store/configureStore.prod.ts
+```js
+import { createStore, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
+import { createHashHistory } from 'history';
+import { routerMiddleware } from 'connected-react-router';
+import createRootReducer from '../reducers';
+import { Store, counterStateType } from '../reducers/types';
+
+const history = createHashHistory();
+const rootReducer = createRootReducer(history);
+const router = routerMiddleware(history);
+const enhancer = applyMiddleware(thunk, router);
+
+function configureStore(initialState?: counterStateType): Store {
+  return createStore(rootReducer, initialState, enhancer);
+}
+
+export default { configureStore, history };
+```

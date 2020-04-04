@@ -1,3 +1,9 @@
+# Menu
+@title TEMP
+@s TEMP
+
+@file app/menu.ts
+```js
 /* eslint @typescript-eslint/ban-ts-ignore: off */
 import {
   app,
@@ -289,3 +295,4 @@ export default class MenuBuilder {
     return templateDefault;
   }
 }
+```

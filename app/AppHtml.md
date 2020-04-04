@@ -1,3 +1,9 @@
+# AppHtml
+@title TEMP
+@s TEMP
+
+@file app/app.html
+```html
 <!DOCTYPE html>
 <html>
   <head>
@@ -48,3 +54,4 @@
     </script>
   </body>
 </html>
+```

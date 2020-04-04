@@ -1,3 +1,9 @@
+# GlobalStyles
+@title TEMP
+@s TEMP
+
+@file app/app.global.css
+```css
 /*
  * @NOTE: Prepend a `~` to css file paths that are in your node_modules
  *        See https://github.com/webpack-contrib/sass-loader#imports
@@ -45,3 +51,4 @@ a:hover {
   text-decoration: none;
   cursor: pointer;
 }
+```

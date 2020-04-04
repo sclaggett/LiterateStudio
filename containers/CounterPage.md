@@ -1,3 +1,9 @@
+# CounterPage
+@title TEMP
+@s TEMP
+
+@file app/containers/CounterPage.tsx
+```js
 import { bindActionCreators, Dispatch } from 'redux';
 import { connect } from 'react-redux';
 import Counter from '../components/Counter';
@@ -28,3 +34,4 @@ function mapDispatchToProps(dispatch: Dispatch) {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Counter);
+```

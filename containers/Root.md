@@ -1,3 +1,9 @@
+# Root
+@title TEMP
+@s TEMP
+
+@file app/containers/Root.tsx
+```js
 import React from 'react';
 import { Provider } from 'react-redux';
 import { ConnectedRouter } from 'connected-react-router';
@@ -20,3 +26,4 @@ const Root = ({ store, history }: Props) => (
 );
 
 export default hot(Root);
+```

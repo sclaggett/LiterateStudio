@@ -2,7 +2,7 @@
 mkdir -p bin
 
 echo -n "Tangling..."
-#lit -t -odir bin Index.md
+lit -t -odir bin Index.md
 cp -R resources/* bin
 echo " done."
 
