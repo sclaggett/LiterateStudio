@@ -2,7 +2,7 @@
 @title TEMP
 @s TEMP
 
-@file app/reducers/types.ts
+@file app/render/reducers/Types.ts
 ```js
 import { Dispatch as ReduxDispatch, Store as ReduxStore, Action } from 'redux';
 

@@ -2,11 +2,11 @@
 @title TEMP
 @s TEMP
 
-@file app/components/Home.tsx
+@file app/render/components/Home.tsx
 ```js
 import React from 'react';
 import { Link } from 'react-router-dom';
-import routes from '../constants/routes.json';
+import routes from '../Routes.json';
 import styles from './Home.css';
 
 export default function Home() {
@@ -19,7 +19,7 @@ export default function Home() {
 }
 ```
 
-@file app/components/Home.css
+@file app/render/components/Home.css
 ```css
 .container {
   position: absolute;

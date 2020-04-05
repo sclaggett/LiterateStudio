@@ -2,7 +2,7 @@
 @title TEMP
 @s TEMP
 
-@file app/containers/CounterPage.tsx
+@file app/render/containers/CounterPage.tsx
 ```js
 import { bindActionCreators, Dispatch } from 'redux';
 import { connect } from 'react-redux';

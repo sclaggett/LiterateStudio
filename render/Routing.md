@@ -1,8 +1,8 @@
-# Routes
+# Routing
 @title TEMP
 @s TEMP
 
-@file app/constants/routes.json
+@file app/render/Routes.json
 ```json
 {
   "HOME": "/",
@@ -10,16 +10,16 @@
 }
 ```
 
-@file app/Routes.tsx
+@file app/render/Router.tsx
 ```js
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import routes from './constants/routes.json';
-import App from './containers/App';
+import routes from './Routes.json';
+import App from './App';
 import HomePage from './containers/HomePage';
 import CounterPage from './containers/CounterPage';
 
-export default function Routes() {
+export default function Router() {
   return (
     <App>
       <Switch>
@@ -30,3 +30,4 @@ export default function Routes() {
   );
 }
 ```
+

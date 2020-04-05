@@ -2,10 +2,10 @@
 @title TEMP
 @s TEMP
 
-@file app/reducers/Counter.ts
+@file app/render/reducers/Counter.ts
 ```js
 import { Action } from 'redux';
-import { INCREMENT_COUNTER, DECREMENT_COUNTER } from '../actions/counter';
+import { INCREMENT_COUNTER, DECREMENT_COUNTER } from '../actions/Counter';
 
 export default function counter(state = 0, action: Action<string>) {
   switch (action.type) {

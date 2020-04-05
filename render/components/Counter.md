@@ -2,12 +2,12 @@
 @title TEMP
 @s TEMP
 
-@file app/components/Counter.tsx
+@file app/render/components/Counter.tsx
 ```js
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './Counter.css';
-import routes from '../constants/routes.json';
+import routes from '../Routes.json';
 
 type Props = {
   increment: () => void;
@@ -75,7 +75,7 @@ export default function Counter(props: Props) {
 }
 ```
 
-@file app/components/Counter.css
+@file app/render/components/Counter.css
 ```css
 .backButton {
   position: absolute;

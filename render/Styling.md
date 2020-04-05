@@ -2,7 +2,7 @@
 @title TEMP
 @s TEMP
 
-@file app/app.global.css
+@file app/render/Global.css
 ```css
 /*
  * @NOTE: Prepend a `~` to css file paths that are in your node_modules
@@ -60,7 +60,7 @@ The easiest way is to not integrate the two together at all by using require ins
 
 define a module definition that applies to all style imports. It won’t catch invalid class names or provide the type-ahead in supported editors but it is an improvement on `any`.
 
-@file app/components/css.d.ts
+@file app/render/components/css.d.ts
 ```css
 declare module '*.scss' {
   const content: { [className: string]: string };

@@ -9,10 +9,8 @@
 
 **Render process**
 
-- [App](render/App.md)
 - [RenderProcess](render/RenderProcess.md)
-- [Root](render/Root.md)
-- [Routes](render/Routes.md)
+- [Routing](render/Routing.md)
 - [Styling](render/Styling.md)
 - `components/`:
   + [Counter](render/components/Counter.md)

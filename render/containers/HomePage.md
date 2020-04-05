@@ -2,7 +2,7 @@
 @title TEMP
 @s TEMP
 
-@file app/containers/HomePage.tsx
+@file app/render/containers/HomePage.tsx
 ```js
 import React from 'react';
 import Home from '../components/Home';

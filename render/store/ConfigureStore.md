@@ -2,10 +2,10 @@
 @title TEMP
 @s TEMP
 
-@file app/store/configureStore.ts
+@file app/render/store/ConfigureStore.ts
 ```js
-import configureStoreDev from './configureStore.dev';
-import configureStoreProd from './configureStore.prod';
+import configureStoreDev from './ConfigureStore.dev';
+import configureStoreProd from './ConfigureStore.prod';
 
 const selectedConfigureStore =
   process.env.NODE_ENV === 'production'
@@ -17,7 +17,7 @@ export const { configureStore } = selectedConfigureStore;
 export const { history } = selectedConfigureStore;
 ```
 
-@file app/store/configureStore.dev.ts
+@file app/render/store/ConfigureStore.dev.ts
 ```js
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
@@ -25,8 +25,8 @@ import { createHashHistory } from 'history';
 import { routerMiddleware, routerActions } from 'connected-react-router';
 import { createLogger } from 'redux-logger';
 import createRootReducer from '../reducers';
-import * as counterActions from '../actions/counter';
-import { counterStateType } from '../reducers/types';
+import * as counterActions from '../actions/Counter';
+import { counterStateType } from './reducers/Types';
 
 declare global {
   interface Window {
@@ -93,9 +93,9 @@ const configureStore = (initialState?: counterStateType) => {
 
   if (module.hot) {
     module.hot.accept(
-      '../reducers',
+      '../Reducers',
       // eslint-disable-next-line global-require
-      () => store.replaceReducer(require('../reducers').default)
+      () => store.replaceReducer(require('../Reducers').default)
     );
   }
 
@@ -105,14 +105,14 @@ const configureStore = (initialState?: counterStateType) => {
 export default { configureStore, history };
 ```
 
-@file app/store/configureStore.prod.ts
+@file app/render/store/ConfigureStore.prod.ts
 ```js
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import { createHashHistory } from 'history';
 import { routerMiddleware } from 'connected-react-router';
 import createRootReducer from '../reducers';
-import { Store, counterStateType } from '../reducers/types';
+import { Store, counterStateType } from '../reducers/Types';
 
 const history = createHashHistory();
 const rootReducer = createRootReducer(history);

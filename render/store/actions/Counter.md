@@ -2,9 +2,9 @@
 @title TEMP
 @s TEMP
 
-@file app/actions/counter.ts
+@file app/render/actions/Counter.ts
 ```js
-import { GetState, Dispatch } from '../reducers/types';
+import { GetState, Dispatch } from '../reducers/Types';
 
 export const INCREMENT_COUNTER = 'INCREMENT_COUNTER';
 export const DECREMENT_COUNTER = 'DECREMENT_COUNTER';

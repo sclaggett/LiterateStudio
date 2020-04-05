@@ -2,7 +2,7 @@
 @title TEMP
 @s TEMP
 
-@file app/menu.ts
+@file app/main/Menu.ts
 ```js
 /* eslint @typescript-eslint/ban-ts-ignore: off */
 import {

@@ -9,7 +9,7 @@ This module executes inside of electron's main process. You can start electron r
 When running `yarn build` or `yarn build-main`, this file is compiled to `./app/main.prod.js` using webpack. This gives us some performance wins.
 
 
-@file app/main.dev.ts
+@file app/main/Main.dev.ts
 ```js
 /* eslint global-require: off, no-console: off */
 
@@ -17,7 +17,7 @@ import path from 'path';
 import { app, BrowserWindow } from 'electron';
 import { autoUpdater } from 'electron-updater';
 import log from 'electron-log';
-import MenuBuilder from './menu';
+import MenuBuilder from './Menu';
 
 export default class AppUpdater {
   constructor() {
@@ -73,7 +73,7 @@ const createWindow = async () => {
           }
   });
 
-  mainWindow.loadURL(`file://${__dirname}/app.html`);
+  mainWindow.loadURL(`file://${__dirname}/Main.html`);
 
   // @TODO: Use 'ready-to-show' event
   //        https://github.com/electron/electron/blob/master/docs/api/browser-window.md#using-ready-to-show-event
@@ -124,7 +124,7 @@ app.on('activate', () => {
 
 Electron's main process creates a new BrowserWindow as the application is spawning and loads this following HTML file into it. 
 
-@file app/app.html
+@file app/main/Main.html
 ```html
 <!DOCTYPE html>
 <html>
