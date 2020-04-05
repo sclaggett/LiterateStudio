@@ -2,30 +2,29 @@
 @book
 @title TEMP
 
-- `app/`:
-  + [AppHtml](app/AppHtml.md)
-  + [GlobalStyles](app/GlobalStyles.md)
-  + [Index](app/Index.md)
-  + [Main](app/Main.md)
-  + [Menu](app/Menu.md)
-  + [Routes](app/Routes.md)
+**Main process**
+
+- [MainProcess](main/MainProcess.md)
+- [Menu](main/Menu.md)
+
+**Render process**
+
+- [App](render/App.md)
+- [RenderProcess](render/RenderProcess.md)
+- [Root](render/Root.md)
+- [Routes](render/Routes.md)
+- [Styling](render/Styling.md)
 - `components/`:
-  + [Counter](components/Counter.md)
-  + [Home](components/Home.md)
-  + [Styling](components/Styling.md)
-- `constants/`:
-  + [Routes](constants/Routes.md)
+  + [Counter](render/components/Counter.md)
+  + [Home](render/components/Home.md)
 - `containers/`:
-  + [App](containers/App.md)
-  + [CounterPage](containers/CounterPage.md)
-  + [HomePage](containers/HomePage.md)
-  + [Root](containers/Root.md)
-- `state/`:
-  + `state/actions/`:
-    * [Counter](state/actions/Counter.md)
-  + `state/reducers/`:
-    * [Counter](state/reducers/Counter.md)
-    * [Index](state/reducers/Index.md)
-    * [Types](state/reducers/Types.md)
-  + `state/store/`:
-    * [Counter](state/store/ConfigureStore.md)
+  + [CounterPage](render/containers/CounterPage.md)
+  + [HomePage](render/containers/HomePage.md)
+- `store/`:
+  + [ConfigureStore](render/store/ConfigureStore.md)
+  + `actions/`:
+    * [Counter](render/store/actions/Counter.md)
+  + `reducers/`:
+    * [Counter](render/store/reducers/Counter.md)
+    * [Index](render/store/reducers/Index.md)
+    * [Types](render/store/reducers/Types.md)

@@ -1,4 +1,4 @@
-# GlobalStyles
+# Styling
 @title TEMP
 @s TEMP
 
@@ -50,5 +50,25 @@ a:hover {
   opacity: 1;
   text-decoration: none;
   cursor: pointer;
+}
+```
+
+
+using both CSS Modules and TypeScript with webpack
+
+The easiest way is to not integrate the two together at all by using require instead of import. The styles object will be typed as `any` offering no type-safety.
+
+define a module definition that applies to all style imports. It won’t catch invalid class names or provide the type-ahead in supported editors but it is an improvement on `any`.
+
+@file app/components/css.d.ts
+```css
+declare module '*.scss' {
+  const content: { [className: string]: string };
+  export default content;
+}
+
+declare module '*.css' {
+  const content: { [className: string]: string };
+  export default content;
 }
 ```

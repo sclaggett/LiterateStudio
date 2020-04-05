@@ -2,6 +2,14 @@
 @title TEMP
 @s TEMP
 
+@file app/constants/routes.json
+```json
+{
+  "HOME": "/",
+  "COUNTER": "/counter"
+}
+```
+
 @file app/Routes.tsx
 ```js
 import React from 'react';

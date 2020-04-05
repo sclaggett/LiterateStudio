@@ -1,6 +1,8 @@
-# Index
+# Render Process
 @title TEMP
 @s TEMP
+
+This file is specified as the initial entry point in the webpack config for both development and production.
 
 @file app/index.tsx
 ```js
