@@ -41,6 +41,8 @@ export default function App(props: Props) {
 }
 ```
 
+The purpose of the *Provider* class is to magically make the store available to all container components in the application without passing it explicitly.
+
 @file app/render/Root.tsx
 ```js
 import React from 'react';

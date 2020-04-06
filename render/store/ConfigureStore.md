@@ -2,6 +2,8 @@
 @title TEMP
 @s TEMP
 
+The file *ConfigureStore* exports a function that creates store 
+
 @file app/render/store/ConfigureStore.ts
 ```js
 import configureStoreDev from './ConfigureStore.dev';
@@ -16,6 +18,32 @@ export const { configureStore } = selectedConfigureStore;
 
 export const { history } = selectedConfigureStore;
 ```
+
+
+Middleare provides a third-party extension point between dispatching an action, and the moment it reaches the reducer.
+
+@file app/render/store/ConfigureStore.prod.ts
+```js
+import { createStore, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
+import { createHashHistory } from 'history';
+import { routerMiddleware } from 'connected-react-router';
+import createRootReducer from '../reducers';
+import { Store, counterStateType } from '../reducers/Types';
+
+const history = createHashHistory();
+const rootReducer = createRootReducer(history);
+const router = routerMiddleware(history);
+const enhancer = applyMiddleware(thunk, router);
+
+function configureStore(initialState?: counterStateType): Store {
+  return createStore(rootReducer, initialState, enhancer);
+}
+
+export default { configureStore, history };
+```
+
+
 
 @file app/render/store/ConfigureStore.dev.ts
 ```js
@@ -105,23 +133,3 @@ const configureStore = (initialState?: counterStateType) => {
 export default { configureStore, history };
 ```
 
-@file app/render/store/ConfigureStore.prod.ts
-```js
-import { createStore, applyMiddleware } from 'redux';
-import thunk from 'redux-thunk';
-import { createHashHistory } from 'history';
-import { routerMiddleware } from 'connected-react-router';
-import createRootReducer from '../reducers';
-import { Store, counterStateType } from '../reducers/Types';
-
-const history = createHashHistory();
-const rootReducer = createRootReducer(history);
-const router = routerMiddleware(history);
-const enhancer = applyMiddleware(thunk, router);
-
-function configureStore(initialState?: counterStateType): Store {
-  return createStore(rootReducer, initialState, enhancer);
-}
-
-export default { configureStore, history };
-```
